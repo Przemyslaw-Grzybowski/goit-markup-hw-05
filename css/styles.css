@@ -78,18 +78,15 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
     padding-left: 0px;
     margin-top: 32px;
     margin-bottom: 32px;
     gap: 46px;
 }
 
-.header-list:hover {
-    cursor: pointer;
-    color: var(--active-color);
-}
-
-.header-link {
+.header-agencja {
+    position: relative;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -101,14 +98,80 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-link:hover {
+.header-agencja:hover {
     cursor: pointer;
     color: var(--active-color);
 }
 
-.header-link:focus {
+.header-agencja::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    background-color: #2196f3;
+    width: 100%;
+    border-radius: 2px;
+    bottom: -33px;
+    left: 0px;
+}
+
+.header-portfolio {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--default-color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-portfolio:hover {
+    cursor: pointer;
     color: var(--active-color);
-    outline: none;
+}
+
+.header-portfolio::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 4px;
+    background-color: #2196f3;
+    width: 100%;
+    border-radius: 2px;
+    bottom: -33px;
+    left: 0px;
+}
+
+.header-kontakt {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--default-color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-kontakt:hover {
+    cursor: pointer;
+    color: var(--active-color);
+}
+
+.header-kontakt::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 4px;
+    background-color: #2196f3;
+    width: 100%;
+    border-radius: 2px;
+    bottom: -33px;
+    left: 0px;
 }
 
 .header-list-link {
@@ -257,11 +320,34 @@ body {
 /* Trzecia sekcja*/
 
 .bau {
+    position: relative;
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 30px;
     padding-left: 0px;
+}
+
+.bau-element {
+    position: relative;
+}
+.description-box {
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    bottom: 4px;
+
+    background: rgba(47, 48, 58, 0.8);
+}
+.description {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.42;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 27px;
 }
 
 /* Czwarta sekcja*/
@@ -346,7 +432,7 @@ body {
     border: 1px solid #afb1b8;
     border-radius: 4px;
     fill: #afb1b8;
-    transition-property: all;
+    transition-property: fill, border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
