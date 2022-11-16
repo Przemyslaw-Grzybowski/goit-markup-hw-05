@@ -354,6 +354,7 @@ body {
 }
 .info-block {
     background: #ffffff;
+
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
@@ -390,10 +391,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    fill: #afb1b8;
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    transition-property: background-color, --color3;
+    transition-property: background-color, fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -401,7 +403,7 @@ body {
 .logo-sn:hover {
     cursor: pointer;
     background-color: var(--active-color);
-    --color3: var(--bcg2-color);
+    fill: var(--bcg2-color);
 }
 
 /* CLIENT */
@@ -536,15 +538,14 @@ body {
     height: 44px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
-    --color1: var(--bcg2-color);
-    transition-property: background-color, --color3;
+    fill: var(--bcg2-color);
+    transition-property: background-color, fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-sn-footer:hover {
     cursor: pointer;
     background-color: var(--active-color);
-    --color3: var(--bcg2-color);
 }
 /* druga strona */
 /* MAIN*/
@@ -685,14 +686,27 @@ body {
 /* BACKDROP */
 
 .backdrop {
+    display: flex;
     position: fixed;
+    justify-content: center;
+    align-content: center;
     width: 100%;
     height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
     background-color: rgba(0, 0, 0, 0.2);
+    scale: 1;
+    opacity: 1;
+    visibility: visible;
+    transition-property: scale, opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
-    position: absolute;
+    margin-top: 221px;
     width: 528px;
     height: 581px;
     left: 536px;
@@ -709,11 +723,13 @@ body {
 }
 
 .close-btn {
-    position: absolute;
     top: 8px;
     right: 8px;
     width: 30px;
     height: 30px;
+    margin-top: 8px;
+    margin-left: 490px;
+    fill: #212121;
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
@@ -721,7 +737,7 @@ body {
 }
 
 .is-hidden {
-    opacity: 1;
+    opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
